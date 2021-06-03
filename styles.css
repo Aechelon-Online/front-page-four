@@ -1,0 +1,88 @@
+html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vh;
+    background: #9a9a9a;
+    margin-top: 2vh;
+}
+
+div {
+    width: 45vw;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    cursor: pointer;
+}
+h1 {
+    font-size: 8vw;
+    font-family: sans-serif;
+    text-align: center;
+    width: 100%;
+    /* color: white; */
+    /* text-shadow:1px 0 0 black,0 1px 0 black,-1px 0 0 black,0 -1px 0 black; */
+}
+
+/* Infinite slight motion for all divs on front page */
+.div1 {
+    background: red;
+    border: 0.75vw solid black;
+    animation: divSway 8s ease infinite;
+}
+.div2 {
+    background: limegreen;
+    border: 0.75vw solid black;
+    animation: divSway 10s ease infinite;
+}
+.div3 {
+    background: yellow;
+    border: 0.75vw solid black;
+    animation: divSway 7s ease infinite;
+}
+.div4 {
+    background: #0077ff;
+    border: 0.75vw solid black;
+    animation: divSway 9s ease infinite;
+}
+/* keyframes for infinite slight motion */
+@keyframes divSway {
+    0% {transform: rotateY(0deg);}
+    25% {transform:  perspective(3000px) rotateY(-5deg);}
+    50% {transform:  perspective(3000px) rotateX(10deg);}
+    75% {transform:  perspective(3000px) rotateY(-10deg);}
+    100% {transform:  perspective(3000px) rotateX(0deg);}
+}
+/* transition for each div into full screen size */
+@keyframes divSwell {
+    0% {width: 45vw; height: 45vh;}
+    100% {width: 98vw; height: 200vh; margin-left: 1vw; border: transparent; border-radius: 0;}
+}
+@keyframes divShrink {
+    40%, 100% {border: transparent; background: transparent;}
+    80% {width: 0; height: 0;}
+    100% {width: 0; height: 0;}
+}
+@keyframes headShrink {
+    20% {font-size: 0;}
+    100% {font-size: 0;}
+}
+@keyframes bodyFix {
+    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0;}
+}
+@keyframes headTop {
+    100% {border: 1px solid blue;}
+}
