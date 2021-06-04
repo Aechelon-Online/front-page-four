@@ -28,6 +28,15 @@ div {
     border-radius: 5%;
     cursor: pointer;
 }
+.back {
+    position: absolute;
+    left: 2vw;
+    bottom: 2vh;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
 h1 {
     font-size: 8vw;
     font-family: sans-serif;
@@ -67,9 +76,9 @@ h1 {
     100% {transform:  perspective(3000px) rotateX(0deg);}
 }
 /* transition for each div into full screen size */
-@keyframes divSwell {
+@keyframes divHeader {
     0% {width: 45vw; height: 45vh;}
-    100% {width: 98vw; height: 200vh; margin-left: 1vw; border: transparent; border-radius: 0;}
+    100% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
 }
 @keyframes divShrink {
     40%, 100% {border: transparent; background: transparent;}
@@ -77,12 +86,45 @@ h1 {
     100% {width: 0; height: 0;}
 }
 @keyframes headShrink {
-    20% {font-size: 0;}
+    0% {font-size: 8vw;}
     100% {font-size: 0;}
 }
 @keyframes bodyFix {
-    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0;}
+    0%, 99% {background: #9a9a9a;}
+    99%, 100% {background: red;}
+    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
 }
-@keyframes headTop {
-    100% {border: 1px solid blue;}
+@keyframes oneBack {
+    0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+    100% {width: 45vw; height: 45vh;}
+}
+@keyframes bodyOrig {
+    0%, 99% {background: red;}
+    99%, 100% {background: #9a9a9a;}
+    50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
+}
+@keyframes headSwell {
+    0%, 20% {font-size: 0;}
+    100% {font-size: 8vw;}
+}
+@keyframes divSwell1 {
+    0% {width: 0; height: 0;}
+    100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: red;}
+}
+@keyframes divSwell2 {
+    0% {width: 0; height: 0;}
+    100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: limegreen;}
+}
+@keyframes divSwell3 {
+    0% {width: 0; height: 0;}
+    100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: yellow;}
+}
+@keyframes divSwell4 {
+    0% {width: 0; height: 0;}
+    100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: #0077ff;}
+}
+@keyframes divBack1 {
+    0%, 80% {width: 0; height: 0;}
+    80%, 100% {width: 45vw; height: 45vh;}
+    90%, 100% {border: 5px solid black; background:red; animation: divSway 8s ease infinite;}
 }
