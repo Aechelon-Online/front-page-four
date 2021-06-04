@@ -28,7 +28,7 @@ div {
     border-radius: 5%;
     cursor: pointer;
 }
-.back {
+.back1, .back2, .back3, .back4 {
     position: absolute;
     left: 2vw;
     bottom: 2vh;
@@ -89,17 +89,59 @@ h1 {
     0% {font-size: 8vw;}
     100% {font-size: 0;}
 }
-@keyframes bodyFix {
+@keyframes bodyFix1 {
     0%, 99% {background: #9a9a9a;}
     99%, 100% {background: red;}
+    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+}
+@keyframes bodyFix2 {
+    0%, 99% {background: #9a9a9a;}
+    99%, 100% {background: limegreen;}
+    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+}
+@keyframes bodyFix3 {
+    0%, 99% {background: #9a9a9a;}
+    99%, 100% {background: yellow;}
+    50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+}
+@keyframes bodyFix4 {
+    0%, 99% {background: #9a9a9a;}
+    99%, 100% {background: #0077ff;}
     50%, 100% {grid-template-rows: 1fr; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
 }
 @keyframes oneBack {
     0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
     100% {width: 45vw; height: 45vh;}
 }
-@keyframes bodyOrig {
+@keyframes twoBack {
+    0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+    100% {width: 45vw; height: 45vh;}
+}
+@keyframes threeBack {
+    0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+    100% {width: 45vw; height: 45vh;}
+}
+@keyframes fourBack {
+    0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+    100% {width: 45vw; height: 45vh;}
+}
+@keyframes bodyOrig1 {
     0%, 99% {background: red;}
+    99%, 100% {background: #9a9a9a;}
+    50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
+}
+@keyframes bodyOrig2 {
+    0%, 99% {background: limegreen;}
+    99%, 100% {background: #9a9a9a;}
+    50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
+}
+@keyframes bodyOrig3 {
+    0%, 99% {background: yellow;}
+    99%, 100% {background: #9a9a9a;}
+    50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
+}
+@keyframes bodyOrig4 {
+    0%, 99% {background: #0077ff;}
     99%, 100% {background: #9a9a9a;}
     50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
 }
