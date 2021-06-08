@@ -14,120 +14,130 @@ const back1 = document.querySelector(".back1")
 const back2 = document.querySelector(".back2")
 const back3 = document.querySelector(".back3")
 const back4 = document.querySelector(".back4")
+const img1 = document.querySelector("img")
+const h1 = document.querySelector("h1")
+const div = document.querySelector("div-check")
+let time = "1.5s"
 
 divOne.addEventListener("click", () => {
-    divOne.style.animation = "divHeader 2s forwards"
-    divTwo.style.animation = "divShrink 2s forwards"
-    divThree.style.animation = "divShrink 2s forwards"
-    divFour.style.animation = "divShrink 2s forwards"
-    header2.style.animation = "headShrink 2s forwards"
-    header3.style.animation = "headShrink 2s forwards"
-    header4.style.animation = "headShrink 2s forwards"
-    body.style.animation = "bodyFix1 2s forwards"
+    divOne.style.animation = `divHeader ${time} forwards`
+    // h1.style.animation = `h1-start ${time} forwards`
+    divTwo.style.animation = `divShrink ${time} forwards`
+    divThree.style.animation = `divShrink ${time} forwards`
+    divFour.style.animation = `divShrink ${time} forwards`
+    header2.style.animation = `headShrink ${time} forwards`
+    header3.style.animation = `headShrink ${time} forwards`
+    header4.style.animation = `headShrink ${time} forwards`
+    body.style.animation = `bodyFix1 ${time} forwards`
     back1.classList.remove("hide")
+    // img1.classList.remove("hide")
 })
 divTwo.addEventListener("click", () => {
-    divOne.style.animation = "divShrink 2s forwards"
-    divTwo.style.animation = "divHeader 2s forwards"
-    divThree.style.animation = "divShrink 2s forwards"
-    divFour.style.animation = "divShrink 2s forwards"
-    header1.style.animation = "headShrink 2s forwards"
-    header3.style.animation = "headShrink 2s forwards"
-    header4.style.animation = "headShrink 2s forwards"
-    body.style.animation = "bodyFix2 2s forwards"
+    divOne.style.animation = `divShrink ${time} forwards`
+    divTwo.style.animation = `divHeader ${time} forwards`
+    divThree.style.animation = `divShrink ${time} forwards`
+    divFour.style.animation = `divShrink ${time} forwards`
+    header1.style.animation = `headShrink ${time} forwards`
+    header3.style.animation = `headShrink ${time} forwards`
+    header4.style.animation = `headShrink ${time} forwards`
+    body.style.animation = `bodyFix2 ${time} forwards`
     back2.classList.remove("hide")
+    h1.style.gridRow = "1 / 2"
 })
 divThree.addEventListener("click", () => {
-    divOne.style.animation = "divShrink 2s forwards"
-    divTwo.style.animation = "divShrink 2s forwards"
-    divThree.style.animation = "divHeader 2s forwards"
-    divFour.style.animation = "divShrink 2s forwards"
-    header1.style.animation = "headShrink 2s forwards"
-    header2.style.animation = "headShrink 2s forwards"
-    header4.style.animation = "headShrink 2s forwards"
-    body.style.animation = "bodyFix3 2s forwards"
+    divOne.style.animation = `divShrink ${time} forwards`
+    divTwo.style.animation = `divShrink ${time} forwards`
+    divThree.style.animation = `divHeader ${time} forwards`
+    divFour.style.animation = `divShrink ${time} forwards`
+    header1.style.animation = `headShrink ${time} forwards`
+    header2.style.animation = `headShrink ${time} forwards`
+    header4.style.animation = `headShrink ${time} forwards`
+    body.style.animation = `bodyFix3 ${time} forwards`
     back3.classList.remove("hide")
+    h1.style.gridRow = "1 / 2"
 })
 divFour.addEventListener("click", () => {
-    divOne.style.animation = "divShrink 2s forwards"
-    divTwo.style.animation = "divShrink 2s forwards"
-    divThree.style.animation = "divShrink 2s forwards"
-    divFour.style.animation = "divHeader 2s forwards"
-    header1.style.animation = "headShrink 2s forwards"
-    header2.style.animation = "headShrink 2s forwards"
-    header3.style.animation = "headShrink 2s forwards"
-    body.style.animation = "bodyFix4 2s forwards"
+    divOne.style.animation = `divShrink ${time} forwards`
+    divTwo.style.animation = `divShrink ${time} forwards`
+    divThree.style.animation = `divShrink ${time} forwards`
+    divFour.style.animation = `divHeader ${time} forwards`
+    header1.style.animation = `headShrink ${time} forwards`
+    header2.style.animation = `headShrink ${time} forwards`
+    header3.style.animation = `headShrink ${time} forwards`
+    body.style.animation = `bodyFix4 ${time} forwards`
     back4.classList.remove("hide")
+    h1.style.gridRow = "1 / 2"
 })
 back1.addEventListener("click", () => {
     back1.classList.add("hide")
-    divOne.style.animation = "oneBack 2s forwards"
-    body.style.animation = "bodyOrig1 2s forwards"
-    header2.style.animation = "headSwell 2s forwards"
-    header3.style.animation = "headSwell 2s forwards"
-    header4.style.animation = "headSwell 2s forwards"
-    divTwo.style.animation = "divSwell2 2s forwards"
-    divThree.style.animation = "divSwell3 2s forwards"
-    divFour.style.animation = "divSwell4 2s forwards"
-    setTimeout(divReset, 2000)
+    divOne.style.animation = `oneBack ${time} forwards`
+    body.style.animation = `bodyOrig1 ${time} forwards`
+    header2.style.animation = `headSwell ${time} forwards`
+    header3.style.animation = `headSwell ${time} forwards`
+    header4.style.animation = `headSwell ${time} forwards`
+    divTwo.style.animation = `divSwell2 ${time} forwards`
+    divThree.style.animation = `divSwell3 ${time} forwards`
+    divFour.style.animation = `divSwell4 ${time} forwards`
+    // img1.classList.add("hide")
+    setTimeout(divReset, 1500)
     function divReset() {
-        divOne.style.animation = "divSway 8s ease infinite"
-        divTwo.style.animation = "divSway 10s ease infinite"
-        divThree.style.animation = "divSway 7s ease infinite"
-        divFour.style.animation = "divSway 9s ease infinite"
+        divOne.style.animation = "divSway 12s ease-in-out infinite"
+        divTwo.style.animation = "divSway 114s ease-in-out infinite"
+        divThree.style.animation = "divSway 11s ease-in-out infinite"
+        divFour.style.animation = "divSway 13s ease-in-out infinite"
     }
 })
 back2.addEventListener("click", () => {
     back2.classList.add("hide")
-    divOne.style.animation = "divSwell1 2s forwards"
-    body.style.animation = "bodyOrig2 2s forwards"
-    header1.style.animation = "headSwell 2s forwards"
-    header3.style.animation = "headSwell 2s forwards"
-    header4.style.animation = "headSwell 2s forwards"
-    divTwo.style.animation = "twoBack 2s forwards"
-    divThree.style.animation = "divSwell3 2s forwards"
-    divFour.style.animation = "divSwell4 2s forwards"
-    setTimeout(divReset, 2000)
+    divOne.style.animation = `divSwell1 ${time} forwards`
+    body.style.animation = `bodyOrig2 ${time} forwards`
+    header1.style.animation = `headSwell ${time} forwards`
+    header3.style.animation = `headSwell ${time} forwards`
+    header4.style.animation = `headSwell ${time} forwards`
+    divTwo.style.animation = `twoBack ${time} forwards`
+    divThree.style.animation = `divSwell3 ${time} forwards`
+    divFour.style.animation = `divSwell4 ${time} forwards`
+    setTimeout(divReset, 1500)
     function divReset() {
-        divOne.style.animation = "divSway 8s ease infinite"
-        divTwo.style.animation = "divSway 10s ease infinite"
-        divThree.style.animation = "divSway 7s ease infinite"
-        divFour.style.animation = "divSway 9s ease infinite"
+        divOne.style.animation = "divSway 12s ease-in-out infinite"
+        divTwo.style.animation = "divSway 14s ease-in-out infinite"
+        divThree.style.animation = "divSway 11s ease-in-out infinite"
+        divFour.style.animation = "divSway 13s ease-in-out infinite"
     }
 })
 back3.addEventListener("click", () => {
     back3.classList.add("hide")
-    divOne.style.animation = "divSwell1 2s forwards"
-    body.style.animation = "bodyOrig3 2s forwards"
-    header1.style.animation = "headSwell 2s forwards"
-    header2.style.animation = "headSwell 2s forwards"
-    header4.style.animation = "headSwell 2s forwards"
-    divTwo.style.animation = "divSwell2 2s forwards"
-    divThree.style.animation = "threeBack 2s forwards"
-    divFour.style.animation = "divSwell4 2s forwards"
-    setTimeout(divReset, 2000)
+    divOne.style.animation = `divSwell1 ${time} forwards`
+    body.style.animation = `bodyOrig3 ${time} forwards`
+    header1.style.animation = `headSwell ${time} forwards`
+    header2.style.animation = `headSwell ${time} forwards`
+    header4.style.animation = `headSwell ${time} forwards`
+    divTwo.style.animation = `divSwell2 ${time} forwards`
+    divThree.style.animation = `threeBack ${time} forwards`
+    divFour.style.animation = `divSwell4 ${time} forwards`
+    setTimeout(divReset, 1500)
     function divReset() {
-        divOne.style.animation = "divSway 8s ease infinite"
-        divTwo.style.animation = "divSway 10s ease infinite"
-        divThree.style.animation = "divSway 7s ease infinite"
-        divFour.style.animation = "divSway 9s ease infinite"
+        divOne.style.animation = "divSway 12s ease-in-out infinite"
+        divTwo.style.animation = "divSway 14s ease-in-out infinite"
+        divThree.style.animation = "divSway 11s ease-in-out infinite"
+        divFour.style.animation = "divSway 13s ease-in-out infinite"
     }
 })
 back4.addEventListener("click", () => {
     back4.classList.add("hide")
-    divOne.style.animation = "divSwell1 2s forwards"
-    body.style.animation = "bodyOrig4 2s forwards"
-    header1.style.animation = "headSwell 2s forwards"
-    header2.style.animation = "headSwell 2s forwards"
-    header3.style.animation = "headSwell 2s forwards"
-    divTwo.style.animation = "divSwell2 2s forwards"
-    divThree.style.animation = "divSwell3 2s forwards"
-    divFour.style.animation = "fourBack 2s forwards"
-    setTimeout(divReset, 2000)
+    divOne.style.animation = `divSwell1 ${time} forwards`
+    body.style.animation = `bodyOrig4 ${time} forwards`
+    header1.style.animation = `headSwell ${time} forwards`
+    header2.style.animation = `headSwell ${time} forwards`
+    header3.style.animation = `headSwell ${time} forwards`
+    divTwo.style.animation = `divSwell2 ${time} forwards`
+    divThree.style.animation = `divSwell3 ${time} forwards`
+    divFour.style.animation = `fourBack ${time} forwards`
+    setTimeout(divReset, 1500)
     function divReset() {
-        divOne.style.animation = "divSway 8s ease infinite"
-        divTwo.style.animation = "divSway 10s ease infinite"
-        divThree.style.animation = "divSway 7s ease infinite"
-        divFour.style.animation = "divSway 9s ease infinite"
+        divOne.style.animation = "divSway 12s ease-in-out infinite"
+        divTwo.style.animation = "divSway 14s ease-in-out infinite"
+        divThree.style.animation = "divSway 11s ease-in-out infinite"
+        divFour.style.animation = "divSway 13s ease-in-out infinite"
     }
 })
