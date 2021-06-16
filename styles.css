@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    margin: 2vw;
+    margin: 0vw;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr;
@@ -17,17 +17,9 @@ body {
     grid-row-gap: 2vh;
     background: #9a9a9a;
     margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
-div {
-    width: 95vw;
-    height: 21vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5%;
-    cursor: pointer;
-}
 .back1, .back2, .back3, .back4 {
     position: absolute;
     left: 2vw;
@@ -37,49 +29,101 @@ div {
 .hide {
     display: none;
 }
+.head-wrap {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-grid1 {
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas: 
+        ". . . . . . . . . . . ."
+        ". . img1 img1 img1 img1 . . . . . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 p p p p . ."
+        ". . img1 img1 img1 img1 . . . . . ."
+        ". . img1 img1 img1 img1 . . . . . ."
+        ". . . . . . . . . . . .";
+    grid-gap: 0px;
+    /* background-color: blue; */
+}
+.div-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: img1;
+    justify-self: end;
+    align-self: start;
+    /* grid-column: 3 / 7;
+    grid-row: 2 / 11; */
+}
+p {
+    margin: 0;
+    font-size: 2.5vw;
+    transform: translate(-15%, -10%);
+    border: 1vw solid yellow;
+    color: yellow;
+    padding: 0%;
+    max-width: 100%;
+    max-height: 100%;
+    grid-area: p;
+    justify-self: start;
+    align-self: start;
+}
 h1 {
     font-size: 8vw;
     font-family: sans-serif;
     text-align: center;
-    margin-top: 2vh;
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    /* width: 100%; */
     /* color: white; */
     /* text-shadow:1px 0 0 black,0 1px 0 black,-1px 0 0 black,0 -1px 0 black; */
+}
+div {
+    border-radius: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Infinite slight motion for all divs on front page */
 .div1 {
+    width: 95vw;
+    height: 21vh;
     background: red;
     border: 0.75vw solid black;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     animation: divSway 12s ease-in-out infinite;
 }
 .div2 {
+    width: 95vw;
+    height: 21vh;
     background: limegreen;
     border: 0.75vw solid black;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     animation: divSway 14s ease-in-out infinite;
 }
 .div3 {
+    width: 95vw;
+    height: 21vh;
     background: yellow;
     border: 0.75vw solid black;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     animation: divSway 11s ease-in-out infinite;
 }
 .div4 {
+    width: 95vw;
+    height: 21vh;
     background: #0077ff;
     border: 0.75vw solid black;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     animation: divSway 13s ease-in-out infinite;
 }
 
@@ -92,9 +136,18 @@ h1 {
     100% {transform:  perspective(1000px) rotateX(0deg);}
 }
 /* transition for each div into full screen size */
+
+@keyframes imgFadeIn {
+    0% {opacity: 0%;}
+    100% {opacity: 100%;}
+}
+@keyframes imgFadeOut {
+    0% {opacity: 100%;}
+    50%, 100% {opacity: 0%;}
+}
 @keyframes divHeader {
-    0% {width: 98vw; height: 21vh; grid-template-columns: repeat(12, 1fr); grid-template-rows: 21vh repeat(12, 1fr); margin: 0; border: 0.75vw solid black; border-radius: 5%;} 
-    100% {width: 100vw; height: 106vh; grid-template-columns: repeat(12, 1fr); grid-template-rows: 21vh repeat(12, 1fr); margin: 0; margin-top: -6vh; border: 0 solid transparent; border-radius: 0;}
+    0% {width: 98vw; height: 21vh; padding-left: 0vw; border: 0.75vw solid black; border-radius: 5%;} 
+    100% {width: 100vw; height: 10vh; margin-top: 0vh; border: 0 solid transparent; border-radius: 0;}
 }
 @keyframes divShrink {
     40%, 100% {border: transparent; background: transparent;}
@@ -106,39 +159,41 @@ h1 {
     100% {font-size: 0;}
 }
 @keyframes bodyFix1 {
-    0%, 99% {background: #9a9a9a;}
-    99%, 100% {background: transparent;}
-    50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+    0%{background: #9a9a9a;}
+    100% {background: red; grid-row-gap: 0vh;}
+    /* 50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;} */
 }
 @keyframes bodyFix2 {
     0%, 99% {background: #9a9a9a;}
-    99%, 100% {background: transparent;}
-    50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+    99%, 100% {background: limegreen; grid-row-gap: 0vh;}
+    /* 50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;} */
 }
 @keyframes bodyFix3 {
     0%, 99% {background: #9a9a9a;}
-    99%, 100% {background: transparent;}
-    50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+    99%, 100% {background: yellow; grid-row-gap: 0vh;}
+    /* 50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;} */
 }
 @keyframes bodyFix4 {
     0%, 99% {background: #9a9a9a;}
-    99%, 100% {background: transparent;}
-    50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;}
+    99%, 100% {background: #0077ff; grid-row-gap: 0vh;}
+    /* 50%, 100% {grid-template-rows: 1fr; margin: 0; padding: 0; grid-column-gap: 0; grid-row-gap: 0; cursor: auto;} */
 }
 @keyframes oneBack {
-    0% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+    0% {width: 100vw; height: 10vh; 
+        margin-top: 0vh; padding-left: 0vw; 
+        border: 0 solid transparent; border-radius: 0;}
     100% {width: 95vw; height: 21vh;}
 }
 @keyframes twoBack {
-    0% {width: 98vw; height: 3vh; margin-top: 1vh; border: 0.75vw solid transparent; border-radius: 0;}
+    0% {width: 100vw; height: 20vh; grid-template-columns: repeat(12, 1fr); grid-template-rows: 21vh repeat(12, 1fr); margin-top: -9vh; padding-left: 0vw; border: 0 solid transparent; border-radius: 0;}
     100% {width: 95vw; height: 21vh;}
 }
 @keyframes threeBack {
-    0% {width: 98vw; height: 0vh; margin-top: -1vh; border: 0.75vw solid transparent; border-radius: 0;}
+    0% {width: 100vw; height: 20vh; grid-template-columns: repeat(12, 1fr); grid-template-rows: 21vh repeat(12, 1fr); margin-top: -12vh; padding-left: 0vw; border: 0 solid transparent; border-radius: 0;}
     100% {width: 95vw; height: 21vh;}
 }
 @keyframes fourBack {
-    0% {width: 98vw; height: 1vh; margin-top: -3vh; border: 0.75vw solid transparent; border-radius: 0;}
+    0% {width: 100vw; height: 20vh; grid-template-columns: repeat(12, 1fr); grid-template-rows: 21vh repeat(12, 1fr); margin-top: -15vh; padding-left: 0vw; border: 0 solid transparent; border-radius: 0;}
     100% {width: 95vw; height: 21vh;}
 }
 @keyframes bodyOrig1 {
@@ -181,6 +236,10 @@ h1 {
     0% {width: 0; height: 0;}
     100% {width: 95vw; height: 21vh; border: 0.75vw solid black; background: #0077ff;}
 }
+@keyframes img1 {
+    0% {width: 0;}
+    100% {width: 100%;}
+}
 
 
 /* Change screen format for tablet/laptop */
@@ -196,66 +255,117 @@ h1 {
         background: #9a9a9a;
         margin-top: 2vh;
     }
-
-    div {
-        width: 45vw;
-        height: 45vh;
+    .head-wrap {
+        margin: 0;
+        padding: 0;
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
         border-radius: 5%;
         cursor: pointer;
     }
-    img {
+    .div1 {
+        width: 45vw;
+        height: 45vh;
+        background: red;
+        border: 0.75vw solid black;
+       
+    }
+    .div2 {
+        width: 45vw;
+        height: 45vh;
+        background: limegreen;
+        border: 0.75vw solid black;
+       
+    }
+    .div3 {
+        width: 45vw;
+        height: 45vh;
+        background: yellow;
+        border: 0.75vw solid black;
+    }
+    .div4 {
+        width: 45vw;
+        height: 45vh;
+        background: #0077ff;
+        border: 0.75vw solid black;
+    }
+    /* img {
         width: 50%;
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-    }
+    } */
     
     @keyframes divHeader {
         0% {width: 45vw; height: 45vh;}
-        100% {width: 98vw; height: 10vh; border: 0.75vw solid transparent; border-radius: 0;}
+        100% {width: 100vw; height: 10vh; 
+            margin: 0; padding: 0; border: 0 solid transparent; 
+            border-radius: 0;}
+    }
+    @keyframes divHeader2 {
+        0% {width: 45vw; height: 45vh;}
+        100% {width: 100vw; height: 10vh; 
+            margin: 0; padding: 0; border: 0 solid transparent; 
+            border-radius: 0; margin-top: -5vh;}
     }
     @keyframes oneBack {
-        0% {width: 98vw; height: 10vh; margin-left: 3vw; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 98vw; height: 10vh; 
+            margin-left: 3vw; border: 0.75vw solid transparent; 
+            border-radius: 0;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes oneBack1 {
-        0% {width: 100vw; height: 0vh; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 100vw; height: 10vh; 
+            border: 0.75vw solid transparent; border-radius: 0;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes twoBack {
-        0% {width: 100vw; height: 10vh; margin-right: 3vw; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 100vw; height: 10vh; margin-right: 3vw; 
+            border: 0.75vw solid transparent; border-radius: 0;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes twoBack2 {
-        0% {width: 100vw; height: 0vh; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 100vw; height: 10vh; 
+            border: 0.75vw solid transparent; border-radius: 0;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes threeBack {
-        0% {width: 100vw; height: 1vh; margin-left: 3vw; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 100vw; height: 10vh; margin-left: 3vw; 
+            border: 0.75vw solid transparent; border-radius: 0; margin-top: -7.5vh;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes fourBack {
-        0% {width: 100vw; height: 1vh; margin-right: 3vw; border: 0.75vw solid transparent; border-radius: 0;}
+        0% {width: 100vw; height: 10vh; margin-right: 3vw; 
+            border: 0.75vw solid transparent; border-radius: 0; margin-top: -7.5vh;}
         80%, 98% {margin-right: 20px;}
         100% {width: 45vw; height: 45vh;}
     }
     @keyframes divSwell1 {
         0% {width: 0; height: 0;}
-        100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: red;}
+        100% {width: 45vw; height: 45vh; 
+            border: 0.75vw solid black; background: red;}
     }
     @keyframes divSwell2 {
         0% {width: 0; height: 0;}
-        100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: limegreen;}
+        100% {width: 45vw; height: 45vh; 
+            border: 0.75vw solid black; background: limegreen;}
     }
     @keyframes divSwell3 {
         0% {width: 0; height: 0;}
-        100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: yellow;}
+        100% {width: 45vw; height: 45vh; 
+            border: 0.75vw solid black; background: yellow;}
     }
     @keyframes divSwell4 {
         0% {width: 0; height: 0;}
-        100% {width: 45vw; height: 45vh; border: 0.75vw solid black; background: #0077ff;}
+        100% {width: 45vw; height: 45vh; 
+            border: 0.75vw solid black; background: #0077ff;}
     }
     @keyframes bodyOrig1 {
         0%, 99% {background: red;}

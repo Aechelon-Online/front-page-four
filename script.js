@@ -16,12 +16,13 @@ const back3 = document.querySelector(".back3")
 const back4 = document.querySelector(".back4")
 const img1 = document.querySelector("img")
 const h1 = document.querySelector("h1")
-const div = document.querySelector("div-check")
+const headWrap = document.querySelector(".head-wrap")
+const flexGrid1 = document.querySelector(".flex-grid1")
+const text = document.querySelector("p")
 let time = "1.5s"
 
 divOne.addEventListener("click", () => {
     divOne.style.animation = `divHeader ${time} forwards`
-    // h1.style.animation = `h1-start ${time} forwards`
     divTwo.style.animation = `divShrink ${time} forwards`
     divThree.style.animation = `divShrink ${time} forwards`
     divFour.style.animation = `divShrink ${time} forwards`
@@ -30,6 +31,19 @@ divOne.addEventListener("click", () => {
     header4.style.animation = `headShrink ${time} forwards`
     body.style.animation = `bodyFix1 ${time} forwards`
     back1.classList.remove("hide")
+    flexGrid1.classList.remove("hide")
+    flexGrid1.style.width = "100vw"
+    flexGrid1.style.height = "90vh"
+    setTimeout(imgShow, 500)
+    function imgShow() {
+        img1.classList.remove("hide")
+        text.classList.remove("hide")
+        img1.style.animation = "imgFadeIn 4s"
+        text.style.animation = "imgFadeIn 4s"
+    }
+    
+    
+    // flexGrid1.style.gridGap = "0px"
     // img1.classList.remove("hide")
 })
 divTwo.addEventListener("click", () => {
@@ -42,31 +56,34 @@ divTwo.addEventListener("click", () => {
     header4.style.animation = `headShrink ${time} forwards`
     body.style.animation = `bodyFix2 ${time} forwards`
     back2.classList.remove("hide")
-    h1.style.gridRow = "1 / 2"
+    flexGrid1.classList.remove("hide")
+    // flexGrid.style.gridGap = "1px"
 })
 divThree.addEventListener("click", () => {
     divOne.style.animation = `divShrink ${time} forwards`
     divTwo.style.animation = `divShrink ${time} forwards`
-    divThree.style.animation = `divHeader ${time} forwards`
+    divThree.style.animation = `divHeader2 ${time} forwards`
     divFour.style.animation = `divShrink ${time} forwards`
     header1.style.animation = `headShrink ${time} forwards`
     header2.style.animation = `headShrink ${time} forwards`
     header4.style.animation = `headShrink ${time} forwards`
     body.style.animation = `bodyFix3 ${time} forwards`
     back3.classList.remove("hide")
-    h1.style.gridRow = "1 / 2"
+    flexGrid1.classList.remove("hide")
+    // flexGrid.style.gridGap = "1px"
 })
 divFour.addEventListener("click", () => {
     divOne.style.animation = `divShrink ${time} forwards`
     divTwo.style.animation = `divShrink ${time} forwards`
     divThree.style.animation = `divShrink ${time} forwards`
-    divFour.style.animation = `divHeader ${time} forwards`
+    divFour.style.animation = `divHeader2 ${time} forwards`
     header1.style.animation = `headShrink ${time} forwards`
     header2.style.animation = `headShrink ${time} forwards`
     header3.style.animation = `headShrink ${time} forwards`
     body.style.animation = `bodyFix4 ${time} forwards`
     back4.classList.remove("hide")
-    h1.style.gridRow = "1 / 2"
+    flexGrid1.classList.remove("hide")
+    // flexGrid.style.gridGap = "1px"
 })
 back1.addEventListener("click", () => {
     back1.classList.add("hide")
@@ -78,6 +95,11 @@ back1.addEventListener("click", () => {
     divTwo.style.animation = `divSwell2 ${time} forwards`
     divThree.style.animation = `divSwell3 ${time} forwards`
     divFour.style.animation = `divSwell4 ${time} forwards`
+    flexGrid1.classList.add("hide")
+    flexGrid1.style.width = "0vw"
+    flexGrid1.style.height = "0vh"
+    img1.classList.add("hide")
+    // flexGrid1.style.gridGap = "0px"
     // img1.classList.add("hide")
     setTimeout(divReset, 1500)
     function divReset() {
@@ -97,6 +119,8 @@ back2.addEventListener("click", () => {
     divTwo.style.animation = `twoBack ${time} forwards`
     divThree.style.animation = `divSwell3 ${time} forwards`
     divFour.style.animation = `divSwell4 ${time} forwards`
+    flexGrid1.classList.add("hide")
+    flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
     function divReset() {
         divOne.style.animation = "divSway 12s ease-in-out infinite"
@@ -115,6 +139,8 @@ back3.addEventListener("click", () => {
     divTwo.style.animation = `divSwell2 ${time} forwards`
     divThree.style.animation = `threeBack ${time} forwards`
     divFour.style.animation = `divSwell4 ${time} forwards`
+    flexGrid1.classList.add("hide")
+    flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
     function divReset() {
         divOne.style.animation = "divSway 12s ease-in-out infinite"
@@ -133,6 +159,8 @@ back4.addEventListener("click", () => {
     divTwo.style.animation = `divSwell2 ${time} forwards`
     divThree.style.animation = `divSwell3 ${time} forwards`
     divFour.style.animation = `fourBack ${time} forwards`
+    flexGrid1.classList.add("hide")
+    flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
     function divReset() {
         divOne.style.animation = "divSway 12s ease-in-out infinite"
