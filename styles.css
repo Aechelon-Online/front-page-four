@@ -62,10 +62,11 @@ body {
 }
 .text {
     margin: 0;
-    font-size: 1rem;
-    border: 1vw solid yellow;
+    font-size: 2.5vw;
+    background-color:hsla(342, 98%, 60%, 0.5);
+    border: 1vw solid hsla(65, 98%, 60%, 0.85);
     color: yellow;
-    padding: 0%;
+    padding: 2%;
     max-width: 100%;
     max-height: 100%;
     grid-column: 6 / 12;
@@ -130,9 +131,17 @@ div {
 }
 @keyframes imgFadeOut {
     0% {opacity: 100%;}
+    100% {opacity: 0%;}
+}
+@keyframes imgFadeOut {
+    0% {opacity: 100%;}
     50%, 100% {opacity: 0%;}
 }
 @keyframes divHeader {
+    0% {width: 98vw; height: 21vh; padding-left: 0vw; border: 0.75vw solid black; border-radius: 5%;} 
+    100% {width: 100vw; height: 10vh; margin-top: 0vh; border: 0 solid transparent; border-radius: 0;}
+}
+@keyframes divHeader2 {
     0% {width: 98vw; height: 21vh; padding-left: 0vw; border: 0.75vw solid black; border-radius: 5%;} 
     100% {width: 100vw; height: 10vh; margin-top: 0vh; border: 0 solid transparent; border-radius: 0;}
 }
@@ -375,3 +384,8 @@ div {
         50%, 100% {grid-template-rows: 1fr 1fr; grid-gap: 2vw; cursor: pointer;}
     }
 }
+@media only screen and (min-width: 1000px) {
+    h1 {
+        font-size: 75px;
+    }
+} 

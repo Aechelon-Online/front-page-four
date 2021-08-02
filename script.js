@@ -99,15 +99,9 @@ back1.addEventListener("click", () => {
     flexGrid1.style.width = "0vw"
     flexGrid1.style.height = "0vh"
     img1.classList.add("hide")
-    // flexGrid1.style.gridGap = "0px"
-    // img1.classList.add("hide")
+    text.classList.add("hide")
     setTimeout(divReset, 1500)
-    function divReset() {
-        divOne.style.animation = "divSway 12s ease-in-out infinite"
-        divTwo.style.animation = "divSway 114s ease-in-out infinite"
-        divThree.style.animation = "divSway 11s ease-in-out infinite"
-        divFour.style.animation = "divSway 13s ease-in-out infinite"
-    }
+    
 })
 back2.addEventListener("click", () => {
     back2.classList.add("hide")
@@ -122,12 +116,7 @@ back2.addEventListener("click", () => {
     flexGrid1.classList.add("hide")
     flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
-    function divReset() {
-        divOne.style.animation = "divSway 12s ease-in-out infinite"
-        divTwo.style.animation = "divSway 14s ease-in-out infinite"
-        divThree.style.animation = "divSway 11s ease-in-out infinite"
-        divFour.style.animation = "divSway 13s ease-in-out infinite"
-    }
+    
 })
 back3.addEventListener("click", () => {
     back3.classList.add("hide")
@@ -142,12 +131,7 @@ back3.addEventListener("click", () => {
     flexGrid1.classList.add("hide")
     flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
-    function divReset() {
-        divOne.style.animation = "divSway 12s ease-in-out infinite"
-        divTwo.style.animation = "divSway 14s ease-in-out infinite"
-        divThree.style.animation = "divSway 11s ease-in-out infinite"
-        divFour.style.animation = "divSway 13s ease-in-out infinite"
-    }
+    
 })
 back4.addEventListener("click", () => {
     back4.classList.add("hide")
@@ -162,10 +146,12 @@ back4.addEventListener("click", () => {
     flexGrid1.classList.add("hide")
     flexGrid1.style.gridGap = "0px"
     setTimeout(divReset, 1500)
-    function divReset() {
-        divOne.style.animation = "divSway 12s ease-in-out infinite"
-        divTwo.style.animation = "divSway 14s ease-in-out infinite"
-        divThree.style.animation = "divSway 11s ease-in-out infinite"
-        divFour.style.animation = "divSway 13s ease-in-out infinite"
-    }
+    
 })
+
+function divReset() {
+    divOne.style.animation = "divSway 12s ease-in-out infinite"
+    divTwo.style.animation = "divSway 14s ease-in-out infinite"
+    divThree.style.animation = "divSway 11s ease-in-out infinite"
+    divFour.style.animation = "divSway 13s ease-in-out infinite"
+}
