@@ -14,11 +14,13 @@ const back1 = document.querySelector(".back1")
 const back2 = document.querySelector(".back2")
 const back3 = document.querySelector(".back3")
 const back4 = document.querySelector(".back4")
-const img1 = document.querySelector("img")
+const img1 = document.querySelector(".pic")
+const img2 = document.querySelector(".pic2")
 const h1 = document.querySelector("h1")
 const headWrap = document.querySelector(".head-wrap")
 const flexGrid1 = document.querySelector(".flex-grid1")
-const text = document.querySelector("p")
+const text1 = document.querySelector(".text")
+const text2 = document.querySelector(".text2")
 let time = "1.5s"
 
 divOne.addEventListener("click", () => {
@@ -37,14 +39,16 @@ divOne.addEventListener("click", () => {
     setTimeout(imgShow, 500)
     function imgShow() {
         img1.classList.remove("hide")
-        text.classList.remove("hide")
+        text1.classList.remove("hide")
         img1.style.animation = "imgFadeIn 4s"
-        text.style.animation = "imgFadeIn 4s"
+        text1.style.animation = "imgFadeIn 4s"
+        img2.classList.remove("hide")
+        text2.classList.remove("hide")
+        img2.style.animation = "imgFadeIn 4s"
+        text2.style.animation = "imgFadeIn 4s"
+        flexGrid1.style.gridGap = "5px"
     }
     
-    
-    // flexGrid1.style.gridGap = "0px"
-    // img1.classList.remove("hide")
 })
 divTwo.addEventListener("click", () => {
     divOne.style.animation = `divShrink ${time} forwards`
@@ -99,7 +103,9 @@ back1.addEventListener("click", () => {
     flexGrid1.style.width = "0vw"
     flexGrid1.style.height = "0vh"
     img1.classList.add("hide")
-    text.classList.add("hide")
+    text1.classList.add("hide")
+    img2.classList.add("hide")
+    text2.classList.add("hide")
     setTimeout(divReset, 1500)
     
 })

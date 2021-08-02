@@ -21,9 +21,10 @@ body {
 }
 
 .back1, .back2, .back3, .back4 {
-    position: absolute;
+    position: fixed;
     left: 2vw;
     bottom: 2vh;
+    background: transparent;
     cursor: pointer;
 }
 .hide {
@@ -41,8 +42,7 @@ body {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
-    grid-gap: 0px;
-    /* background-color: blue; */
+    grid-gap: 5px;
 }
 .div-wrapper {
     display: flex;
@@ -57,8 +57,6 @@ body {
     grid-column: 2 / 7;
     justify-self: end;
     align-self: start;
-    /* grid-column: 3 / 7;
-    grid-row: 2 / 11; */
 }
 .text {
     margin: 0;
@@ -70,6 +68,27 @@ body {
     max-width: 100%;
     max-height: 100%;
     grid-column: 6 / 12;
+}
+.pic2 {
+    max-width: 40vw;
+    max-height: 80vh;
+    grid-column: 7 / 12;
+    justify-self: start;
+    align-self: end;
+}
+.text2 {
+    margin: 0;
+    font-size: 2.5vw;
+    background-color:hsla(342, 98%, 60%, 0.5);
+    border: 1vw solid hsla(65, 98%, 60%, 0.85);
+    color: yellow;
+    padding: 2%;
+    max-width: 100%;
+    max-height: 100%;
+    grid-column: 2 / 8;
+}
+.pic2, .text2 {
+    grid-row: 4 / 5;
 }
 h1 {
     font-size: 8vw;
